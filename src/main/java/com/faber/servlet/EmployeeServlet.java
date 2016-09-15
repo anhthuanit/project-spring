@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.faber.servlet;
 
+//<editor-fold defaultstate="collapsed" desc="IMPORT">
 import com.faber.business.EmployeeBS;
 import com.faber.dto.EmployeeDTO;
 import java.io.IOException;
@@ -13,22 +9,23 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+//</editor-fold>
 
 /**
  *
- * @author root
+ * @author Ho Anh Thuan
  */
 public class EmployeeServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String path = request.getServletPath();
         PrintWriter out = response.getWriter();
 
         EmployeeBS employeeBS = new EmployeeBS();
 
+        //<editor-fold defaultstate="collapsed" desc="MODIFY EMPLOYEE">
         if (path.equals("/ModifyEmployee")) {
             String idemp = request.getParameter("idemp");
             if (idemp != null) {
@@ -37,16 +34,18 @@ public class EmployeeServlet extends HttpServlet {
             }
 
         }
+        //</editor-fold>
+
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath();
         PrintWriter out = response.getWriter();
 
         EmployeeBS employeeBS = new EmployeeBS();
 
+        //<editor-fold defaultstate="collapsed" desc="ADD EMPLOYEE">
         if (path.equals("/AddEmployee")) {
 
             String id = request.getParameter("id");
@@ -64,7 +63,11 @@ public class EmployeeServlet extends HttpServlet {
 
             out.print(employeeBS.addEmployee(employeeDTO));
 
-        } else if (path.equals("/ModifyEmployee")) {
+        }
+        //</editor-fold>
+
+        //<editor-fold defaultstate="collapsed" desc="MODIFY EMPLOYEE">
+        if (path.equals("/ModifyEmployee")) {
 
             // execute modify employee
             String id = request.getParameter("id");
@@ -82,16 +85,26 @@ public class EmployeeServlet extends HttpServlet {
 
             out.print(employeeBS.modifyEmployee(employeeDTO));
 
-        } else if (path.equals("/DeleteEmployee")) {
+        }
+        //</editor-fold>
+
+        //<editor-fold defaultstate="collapsed" desc="DELETE EMPLOYEE">
+        if (path.equals("/DeleteEmployee")) {
 
             String id = request.getParameter("id");
             out.print(employeeBS.deleteEmployee(Integer.parseInt(id)));
-            
-        } else if (path.equals("/AllEmployee")) {
-            
-            out.print(employeeBS.getAllEmployee());
-            
+
         }
+        //</editor-fold>
+
+        //<editor-fold defaultstate="collapsed" desc="GET ALL EMPLOYEE">
+        if (path.equals("/AllEmployee")) {
+
+            out.print(employeeBS.getAllEmployee());
+
+        }
+        //</editor-fold>
+
     }
 
 }

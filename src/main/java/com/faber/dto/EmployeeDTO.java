@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.faber.dto;
 
 /**
  *
- * @author root
+ * @author Ho Anh Thuan
  */
 public class EmployeeDTO {
     private Integer id;
@@ -71,6 +66,5 @@ public class EmployeeDTO {
     public void setSalary(Integer salary) {
         this.salary = salary;
     }
-    
     
 }

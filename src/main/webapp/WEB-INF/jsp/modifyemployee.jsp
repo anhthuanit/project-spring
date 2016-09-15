@@ -1,7 +1,7 @@
 <%-- 
     Document   : modifiEmployee
     Created on : Sep 13, 2016, 12:31:00 PM
-    Author     : root
+    Author     : Ho Anh Thuan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,38 +19,37 @@
             showEmployee();
             btnUpdateClick();
         });
-       
     </script>
     <body>
-        <caption>Modify Employee
-            </caption>
-        <form>
-              <div>
-                    <label for="id">ID:</label>
-                    <input type="text" disabled="true" id="id" name="id">
-                  </div>
+    <caption>Modify Employee
+    </caption>
+    <form>
+        <div>
+            <label for="id">ID:</label>
+            <input type="text" disabled="true" id="id" name="id">
+        </div>
 
-              <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
-                  </div>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
 
-              <div>
-                    <label for="age">Age:</label>
-                    <input type="text" id="age" name="age">
-                  </div>
-            <div>
-                    <label for="dept">Dept:</label>
-                    <input type="text" id="dept" name="dept">
-                  </div>
-            <div>
-                    <label for="salary">Salary :</label>
-                    <input type="text" id="salary" name="salary">
-                  </div>
-             
-              <div class="button">
-                    <button type="button" id="btnUpdate">Edit</button>
-                  </div>
-        </form>
-    </body>
+        <div>
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age">
+        </div>
+        <div>
+            <label for="dept">Dept:</label>
+            <input type="text" id="dept" name="dept">
+        </div>
+        <div>
+            <label for="salary">Salary :</label>
+            <input type="text" id="salary" name="salary">
+        </div>
+         
+        <div class="button">
+            <button type="button" id="btnUpdate">Edit</button>
+        </div>
+    </form>
+</body>
 </html>

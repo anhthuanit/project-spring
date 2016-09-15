@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Sep 13, 2016, 11:34:15 AM
-    Author     : root
+    Author     : Ho Anh Thuan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

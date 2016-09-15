@@ -1,47 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.faber.connectionDB;
 
+//<editor-fold defaultstate="collapsed" desc="IMPORT">
 import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+//</editor-fold>
 
 /**
  *
- * @author root
+ * @author Ho Anh Thuan
  */
 public class DBConnect {
-    final String DRIVER = "com.mysql.jdbc.Driver";
-    final String DB_PATH = "jdbc:mysql://172.30.4.132:3306/Test";
-   
-    String userName = "mieruca";
-    String password = "faber@2016";
+    static String DRIVER = "com.mysql.jdbc.Driver";
+    static String DB_PATH = "jdbc:mysql://172.30.4.132:3306/Test";
+    static String userName = "mieruca";
+    static String password = "faber@2016";
     Connection conn= null;
-    Statement stmt = null;
     
-    public void connect() throws SQLException, Exception {
+    //<editor-fold defaultstate="collapsed" desc="CONNECT DB">
+    public static Connection connect() throws SQLException, Exception {
         Class.forName(DRIVER);
         System.out.println("Connecting...");
-        conn = (Connection) DriverManager.getConnection(DB_PATH,userName,password);
-        stmt = (Statement) conn.createStatement();
+        return (Connection) DriverManager.getConnection(DB_PATH,userName,password);
         
     }
-    public void closeConnection() throws SQLException, Exception {
-        conn.close();
-        stmt.close();
-    }
-        
+    //</editor-fold>
     
-    public Statement getStatement(){
-        return stmt;
-    }
-    
-    public Connection getConnection(){
-        return conn;
-    }
 }
 
